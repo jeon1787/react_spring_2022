@@ -24,3 +24,10 @@ class PersonPlus extends Person{
 var kim = new PersonPlus('kim', 10, 20);
 console.log('kim.sum() : ', kim.sum());
 console.log('kim.avg() : ', kim.avg());
+
+//전통적인 주류 언어에서는(Java) super class와 그를 상속받는 sub class가 존재하고
+//sub class를 통해 object를 선언한다.
+//즉 전통적인 언어에서는 한 번 object가 생성되고 나서는 object를 고칠 수 없다.
+//반면에 JavaScript에서는 super object와 그를 상속받는 sub object가 존재하고
+//이미 생성된 sub class를 고치는 것이 가능하며 객체가 직접 객체를 상속받는 관계이다.
+//만약 부모객체를 바꾸고 싶다면 prototype link만 변경하면 된다. 이 링크와 연결된 부모 객체를 prototype object라고도 부른다.
