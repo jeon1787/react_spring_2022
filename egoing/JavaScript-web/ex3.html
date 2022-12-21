@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css 작성란 */
+        /* class = '.' */
+        .js{
+            font-weight: bold;
+            color: red;
+        }
+        /* id = '#' */
+        #first{
+            color: yellow;
+        }
+        /* 
+            class는 무언가를 그룹핑한다는 의미(광범위한 css 효과를 원할 때)
+            id는 한가지 대상을 식별한다는 의미(특정한 한 태그에 css 효과를 원할 때 또는 class보다 우위의 효과를 원할 때)
+            따라서 class와 id의 css가 충돌되면 id가 우선
+            또한 id는 동일한 이름은 한 태그에서만 쓰는 것이 규약
+        */
+        span{
+            color: blue;
+        }
+        /* 
+            css 효력 : tag명 < class < id
+        */
+    </style>
+</head>
+<body>
+    <h1><a href="index.html">WEB</a></h1>
+    <h2 style="background-color: coral;color: powderblue";>JavaScript</h2>
+    <p>
+        <span id="first" class="js">JavaScript</span> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span> Error dolorem nesciunt quisquam earum quidem suscipit perspiciatis qui dolore sapiente nulla, beatae aperiam impedit maxime magni praesentium ipsa tempora quibusdam consequuntur!
+        Harum animi eaque ad accusamus quidem accusantium obcaecati reprehenderit atque natus nesciunt. Reiciendis adipisci quisquam commodi, vitae officiis praesentium tempora laudantium deleniti ab enim eius quidem repudiandae quo corrupti sapiente.
+        Sapiente nostrum praesentium quae? Nihil provident distinctio ipsam aperiam placeat, est pariatur architecto praesentium cum magni enim sed eius et, <span class="js">JavaScript</span> consequuntur saepe recusandae nostrum quas quia? <span class="js">JavaScript</span> Ipsam rerum impedit facere.
+        Facere porro cupiditate possimus, excepturi sapiente aliquam, molestiae quisquam quia quam, officia labore suscipit corrupti voluptate dicta! Necessitatibus tempora dolorem explicabo, laborum nisi officiis quisquam iste perspiciatis libero, quibusdam fugiat.
+    </p>
+</body>
+</html>
