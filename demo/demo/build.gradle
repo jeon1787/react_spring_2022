@@ -1,0 +1,40 @@
+//gradle 확장을 위한 plugin
+plugins {
+	id 'java'//build를 위해 java plugin 사용
+	id 'org.springframework.boot' version '2.7.4'//spring boot plugin 과 버전
+	id 'io.spring.dependency-management' version '1.1.0'//spring.dependency-management plugin 과 버전
+}
+
+//프로젝트의 메타데이터
+group = 'com.exampl'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'//프로젝트의 java 버전(위의 java plugin의 버전)
+
+configurations {
+	compileOnly {//컴파일에만 필요한 dependency라는 의미
+		extendsFrom annotationProcessor//롬북이 생략된 코드를 작성하려면 어노테이션 프로세서가 필요 프로젝트 컴파일시 이를 사용하도록 알림
+	}
+}
+
+//repositories : 그래들이 라이브러리를 다운받는 장소
+repositories {
+	//주로 사용할 repository
+	mavenCentral()
+	//spring용 repository
+	maven { url 'https://repo.spring.io/milestone'}
+	maven { url 'https://repo.spring.io/snapshot'}
+}
+
+//dependencies : 프로젝트 의존성, 여기에 명시한 라이브러리들을 repositories를 통해 다운받는다.
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'//lombok : 개발 코드 단축
+	runtimeOnly 'com.h2database:h2'//H2 db
+	annotationProcessor 'org.projectlombok:lombok'//lombok 사용에 필요, 컴파일시 작동
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
