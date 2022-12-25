@@ -10,10 +10,15 @@ class CreateContent extends Component{
 		return(
 			<article>
 				<h2>Create</h2>
-				<form action="/create_process" method="post" onSubmit={function(e){
-					e.preventDefault();//a태그와 같이 submit도 화면이 렌더링됨
-					alert('submit');
-				}.bind(this)}>
+				<form action="/create_process" method="post"
+					onSubmit={function(e){
+						e.preventDefault();//a태그와 같이 submit도 화면이 렌더링됨(action)
+						this.props.onSubmit(
+							e.target.title.value,
+							e.target.desc.value
+						);
+					}.bind(this)}
+				>
 					<p><input type="text" name="title" placeholder="title"></input></p>
 					<p><textarea name="desc" placeholder="description"></textarea></p>
 					<p><input type="submit"></input></p>
