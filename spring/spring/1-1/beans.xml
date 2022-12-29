@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    bean 등록, bean 설정을 모두 xml에 작성할 경우 아래의 포맷을 사용한다.(어노테이션x)
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="messageBean" class="sample3.MessageBeanEn" />
+</beans>
